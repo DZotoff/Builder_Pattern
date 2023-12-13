@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BuilderAssignment.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace BuilderAssignment
 {
@@ -42,13 +43,25 @@ namespace BuilderAssignment
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            // TODO#1: Wake up your RamenChef by initializing it
 
-            // TODO#2: Create new RamenBuilder's for each ramen recepies (MisoRamenBuilder, SpicyRamenBuilder, VeganRamenBuilder) 
-            // TODO#3: Use your RamenChef to prepare (build) each type of ramen (Miso, Spicy, Vegan)
-            // TODO#4: After the RamenCheft has prepared the bowl of ramen, use FinishedBowlOfRamen to get the content of
-            //         the RamenBowl and print it out using WriteLine method
+            RamenChef ramenChef = new RamenChef();
 
+            MisoRamenBuilder misoBuilder = new MisoRamenBuilder();
+            SpicyRamenBuilder spicyBuilder = new SpicyRamenBuilder();
+            VeganRamenBuilder veganBuilder = new VeganRamenBuilder();
+
+            // Build and print each type of ramen
+            Console.WriteLine(RamenBowl.FinishedBowlOfRamen(ramenChef.PrepareRamen(misoBuilder)));
+            Console.WriteLine(RamenBowl.FinishedBowlOfRamen(ramenChef.PrepareRamen(spicyBuilder)));
+            Console.WriteLine(RamenBowl.FinishedBowlOfRamen(ramenChef.PrepareRamen(veganBuilder)));
         }
+        // TODO#1: Wake up your RamenChef by initializing it
+
+        // TODO#2: Create new RamenBuilder's for each ramen recepies (MisoRamenBuilder, SpicyRamenBuilder, VeganRamenBuilder) 
+        // TODO#3: Use your RamenChef to prepare (build) each type of ramen (Miso, Spicy, Vegan)
+        // TODO#4: After the RamenCheft has prepared the bowl of ramen, use FinishedBowlOfRamen to get the content of
+        //         the RamenBowl and print it out using WriteLine method
+
+    }
     }
 }
