@@ -14,12 +14,13 @@ namespace BuilderAssignment.Models
     {
         //TODO#1: Add attributes for each enum in IngredientEnums.cs file
 
-        //TODO#2: Return description of finished bowl of ramen
-
         public BrothType Broth { get; set; }
         public NoodleType Noodles { get; set; }
         public Topping[] Toppings { get; set; }
         public Extra[] Extras { get; set; }
+
+        
+
         public static string FinishedBowlOfRamen(RamenBowl ramen)
         {
             StringBuilder description = new StringBuilder();
@@ -36,6 +37,8 @@ namespace BuilderAssignment.Models
             {
                 description.AppendLine("Extras: " + string.Join(", ", ramen.Extras));
             }
+            //TODO#2: Return description of finished bowl of ramen
+
             return description.ToString();
         }
     }

@@ -9,10 +9,10 @@ namespace BuilderAssignment
         {
             //TODO#1: Call each builder step declared in RamenBuilder class
 
-            builder.SetBroth(BrothType.Tonkotsu); // Default values, you can change these
+            builder.SetBroth(BrothType.Tonkotsu); 
             builder.SetNoodles(NoodleType.Thin);
 
-            // Customize the bowl using the builder's methods
+            // Customizing via builder's methods
             builder.AddToppings(Topping.ChashuPork, Topping.GreenOnions);
             builder.AddExtras(Extra.ExtraSpice);
 
